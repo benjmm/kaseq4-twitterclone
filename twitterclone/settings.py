@@ -25,7 +25,7 @@ SECRET_KEY = '4(o2i6^^lzn-y88tp4u_7fsw&&e6jorggx%$u=skj&&4jrob#f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'authentication.apps.AuthenticationConfig',
+    'notification.apps.NotificationConfig',
+    'tweet.apps.TweetConfig',
+    'twitteruser.apps.TwitteruserConfig',
 ]
 
 MIDDLEWARE = [
