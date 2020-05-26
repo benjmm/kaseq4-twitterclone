@@ -2,4 +2,22 @@
 
 <h2>Welcome to Twitter Clone</h2>
 
-{% include 'nav.html' %} {% endblock %}
+{% include 'nav.html' %} 
+
+<p>
+    <h4>Newest Tweets:</h4>
+  {% if tweets %}
+  <ul>
+    {%for tweet in tweets%}
+  
+    <li>{% include 'tweet_blob.html' %}</li>
+  
+    {% endfor %}
+  </ul>
+  {% else %}
+  
+  <h6>No Tweets.</h6>
+  {% endif %}
+  </p>
+
+  {% endblock %}
