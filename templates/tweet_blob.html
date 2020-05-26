@@ -1,6 +1,5 @@
 <p>
   <a href="/user/{{ tweet.author.id }}">{{ tweet.author.display_name }}</a>
-  says:
+  at <a href="/tweet/{{ tweet.id }}">{{ tweet.date }}</a>:
 </p>
 <p>{{ tweet.body }}</p>
-<p>- {{ tweet.date }}</p>

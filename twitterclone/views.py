@@ -13,4 +13,5 @@ def IndexView(request):
 def HomeView(request):
     html = 'home.html'
     user = request.user
-    return render(request, html, {'user': user})
+    tweets = Tweet.objects.all().order_by('-date')[:10]
+    return render(request, html, {'user': user, 'tweets': tweets})
