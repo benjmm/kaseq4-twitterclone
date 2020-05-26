@@ -1,7 +1,14 @@
 from django.shortcuts import render
-# from authentication.forms import (LoginForm, AddBugForm)
+from django.contrib.auth.decorators import login_required
 
 
-def index_v(request):
+def IndexView(request):
     html = 'index.html'
     return render(request, html)
+
+
+@ login_required
+def HomeView(request):
+    html = 'home.html'
+    user = request.user
+    return render(request, html, {'user': user})
