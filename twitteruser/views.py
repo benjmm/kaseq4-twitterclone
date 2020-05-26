@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from .models import CustomUser
 from tweet.models import Tweet
 
 
-@ login_required
+# @ login_required
 def UserView(request, id):
     html = "user.html"
     user = CustomUser.objects.get(id=id)
