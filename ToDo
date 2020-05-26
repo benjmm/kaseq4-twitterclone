@@ -1,0 +1,11 @@
+-Rename CustomUser to TwitterUser
+-Rename '/' to 'index'
+-Rename 'home' to '/'
+-Registration
+-Add a Tweet
+-Follow/Unfollow
+-@Mentions
+-Notifications
+-Tweet/Follow Counts
+-Check for login in models, forms, & urls files
+-Check for only three custom models: TwitterUser Tweet, and Notification
