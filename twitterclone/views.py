@@ -5,7 +5,7 @@ from tweet.models import Tweet
 
 def IndexView(request):
     html = 'index.html'
-    tweets = Tweet.objects.all().order_by('-date')
+    tweets = Tweet.objects.all().order_by('-date')[:10]
     return render(request, html, {'tweets': tweets})
 
 
