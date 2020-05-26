@@ -1,22 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Index</h2>
+<h2>Welcome to Twitter Clone</h2>
 
-<p>
-{% if request.user.is_authenticated %}
-
-<p>You are currently logged in as <a href="/user/{{request.user.id}}/">{{ request.user.display_name }}</a>.</p>
-<p><a href="/home">-Home-</a></p>
-<p><a href="/logout">-Log Out-</a></p>
-
-{% else %}
-
-<p>You are not logged in.</p>
-
-<p><a href="/login">-Log In-</a></p>
-
-{% endif %}
-
-</p>
-
-{% endblock %}
+{% include 'nav.html' %} {% endblock %}

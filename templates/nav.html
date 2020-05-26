@@ -1,0 +1,14 @@
+{% if request.user.is_authenticated %}
+<p>
+  You are currently logged in as
+  <a href="/user/{{request.user.id}}/">{{ request.user.display_name }}</a>.
+</p>
+<p><a href="/home">-Return to Home-</a></p>
+<p>
+  <a href="/logout">-Log Out-</a>
+</p>
+{% else %}
+<p>
+  <a href="/login">-Log In-</a>
+</p>
+{% endif %}

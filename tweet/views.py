@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Tweet
 
 
-@ login_required
 def TweetView(request, id):
     html = "tweet.html"
     tweet = Tweet.objects.get(id=id)
