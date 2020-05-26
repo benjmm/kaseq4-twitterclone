@@ -8,4 +8,19 @@
 
 <h4>{{ user.display_name }}</h4>
 
+<p>
+  {% if tweets %}
+<ul>
+  {%for tweet in tweets%}
+
+  <li>{% include 'tweet_blob.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No Tweets.</h6>
+{% endif %}
+</p>
+
 {% endblock %}
