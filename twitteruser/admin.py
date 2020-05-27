@@ -18,8 +18,8 @@ class TwitterUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'display_name', 'email', 'password1', 'password2',
-                       'is_staff', 'is_active')}
+            'fields': ('username', 'display_name', 'email', 'password1',
+                       'password2', 'is_staff', 'is_active')}
          ),
     )
     search_fields = ('email',)
