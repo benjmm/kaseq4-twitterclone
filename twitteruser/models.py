@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 # from django.utils import timezone
 
 
-class CustomUser(AbstractUser):
+class TwitterUser(AbstractUser):
     display_name = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):

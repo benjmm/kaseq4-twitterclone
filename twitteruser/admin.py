@@ -1,14 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from .forms import CustomUserCreationForm, CustomUserChangeForm
-from .models import CustomUser
+from .forms import TwitterUserCreationForm, TwitterUserChangeForm
+from .models import TwitterUser
 
 
-class CustomUserAdmin(UserAdmin):
-    add_form = CustomUserCreationForm
-    form = CustomUserChangeForm
-    model = CustomUser
+class TwitterUserAdmin(UserAdmin):
+    add_form = TwitterUserCreationForm
+    form = TwitterUserChangeForm
+    model = TwitterUser
     list_display = ['username', 'display_name', 'email', ]
     list_filter = ('username', 'is_staff', 'is_active',)
     fieldsets = (
@@ -26,4 +26,4 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('email',)
 
 
-admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(TwitterUser, TwitterUserAdmin)
