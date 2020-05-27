@@ -1,4 +1,4 @@
--Rename CustomUser to TwitterUser
+To Do:
 -Rename '/' to 'index'
 -Rename 'home' to '/'
 -Registration
@@ -9,3 +9,6 @@
 -Tweet/Follow Counts
 -Check for login in models, forms, & urls files
 -Check for only three custom models: TwitterUser Tweet, and Notification
+
+Done:
+-Rename CustomUser to TwitterUser
