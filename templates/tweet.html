@@ -1,14 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
 <h2>Tweet Details</h2>
-{% include 'nav.html' %}
+{% include 'nav.html' %} {% include 'tweet_blob.html' %}
 
-<p>
-  Author:
-  <a href="/user/{{ tweet.author.id }}">{{ tweet.author.display_name }}</a>
-</p>
-<p>Date: {{ tweet.date }}</p>
-<p>{{ tweet.body }}</p>
 <p><a href="/tweet/{{ tweet.id }}">(Permalink)</a></p>
 
 {% endblock %}
