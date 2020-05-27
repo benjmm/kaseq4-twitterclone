@@ -1,7 +1,7 @@
 To Do:
--Rename '/' to 'index'
--Rename 'home' to '/'
--Registration
+-Rename '/' to 'index'?
+-Rename 'home' to '/'?
+
 -Add a Tweet
 -Follow/Unfollow
 -@Mentions
@@ -9,6 +9,8 @@ To Do:
 -Tweet/Follow Counts
 -Check for login in models, forms, & urls files
 -Check for only three custom models: TwitterUser Tweet, and Notification
+-Remove "-Return to Home-" link when already at home page
 
 Done:
 -Rename CustomUser to TwitterUser
+-Registration
