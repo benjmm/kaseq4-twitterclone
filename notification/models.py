@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 from twitteruser.models import TwitterUser
 from tweet.models import Tweet
 
