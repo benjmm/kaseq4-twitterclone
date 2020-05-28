@@ -12,7 +12,8 @@ class TwitterUserAdmin(UserAdmin):
     list_display = ['username', 'display_name', 'email', ]
     list_filter = ('username', 'is_staff', 'is_active',)
     fieldsets = (
-        (None, {'fields': ('username', 'display_name', 'email', 'password',)}),
+        (None, {'fields': ('username', 'display_name',
+                           'email', 'password', 'following')}),
         ('Permissions', {'fields': ('is_staff', 'is_active')}),
     )
     add_fieldsets = (

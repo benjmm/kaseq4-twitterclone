@@ -4,7 +4,9 @@ from .models import TwitterUser
 
 
 class TwitterUserCreationForm(UserCreationForm):
-    display_name = forms.CharField(max_length=50)
+    # display_name = forms.CharField(max_length=50)
+    # followers = forms.ModelMultipleChoiceField(
+    #     queryset=TwitterUser.objects.all())
 
     class Meta:
         model = TwitterUser

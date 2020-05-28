@@ -8,6 +8,8 @@ To Do:
 -Remove "-Return to Home-" link when already at home page
 -Rename '/' to 'index'?
 -Rename 'home' to '/'?
+-Add option to self-edit user profile
+-Add option to delete own tweets
 
 Done:
 -Rename CustomUser to TwitterUser
