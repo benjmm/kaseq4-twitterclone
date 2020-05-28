@@ -17,3 +17,6 @@ Done:
 -Follow/Unfollow
 -Tweet/Follow Counts
 -Home page only shows tweets of users you are following
+
+For help with making a values list in a query:
+https://stackoverflow.com/questions/4812035/django-objects-filter-values-list-vs-python-list-comprehension-for-in-quer
