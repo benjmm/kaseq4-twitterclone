@@ -1,8 +1,7 @@
 To Do:
--Follow/Unfollow
+-Tweet/Follow Counts
 -@Mentions
 -Notifications
--Tweet/Follow Counts
 -Check for login in models, forms, & urls files
 -Check for only three custom models: TwitterUser Tweet, and Notification
 -Remove "-Return to Home-" link when already at home page
@@ -10,8 +9,10 @@ To Do:
 -Rename 'home' to '/'?
 -Add option to self-edit user profile
 -Add option to delete own tweets
+-make follow & unfollow links conditional
 
 Done:
 -Rename CustomUser to TwitterUser
 -Registration
 -Add a Tweet
+-Follow/Unfollow
