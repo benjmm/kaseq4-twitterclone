@@ -1,7 +1,6 @@
 To Do:
--Tweet/Follow Counts
--@Mentions
 -Notifications
+-@Mentions
 -Check for login in models, forms, & urls files
 -Check for only three custom models: TwitterUser Tweet, and Notification
 -Remove "-Return to Home-" link when already at home page
@@ -16,3 +15,5 @@ Done:
 -Registration
 -Add a Tweet
 -Follow/Unfollow
+-Tweet/Follow Counts
+-Home page only shows tweets of users you are following
