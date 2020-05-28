@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
 <h2>User Details</h2>
+Following: {{ user.following.count }}
+Tweets: {{ user.tweet_set.count }}
 
 {% include 'nav.html' %}
 
