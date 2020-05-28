@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect
 from django.contrib.auth import login, authenticate
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from .models import TwitterUser
 from tweet.models import Tweet
 from .forms import TwitterUserCreationForm
@@ -34,3 +34,14 @@ def RegisterView(request):
     form = TwitterUserCreationForm()
 
     return render(request, html, {'form': form})
+
+
+@login_required
+def FollowView(request, id):
+    request.user.following.add(TwitterUser.objects.get(id=id))
+    return HttpResponseRedirect(reverse('home'))
+
+
+@login_required
+def UnfollowView(request, id):
+    return HttpResponseRedirect(reverse('home'))

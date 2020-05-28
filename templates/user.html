@@ -4,6 +4,10 @@
 
 {% include 'nav.html' %}
 
+{% if request.user.is_authenticated %}
+<p><a href="/follow/{{ user.id }}">Follow This User</a></p>
+{% endif %}
+
 <h4>{{ user.display_name }}</h4>
 
 <p>
