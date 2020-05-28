@@ -6,6 +6,7 @@
 
 {% if request.user.is_authenticated %}
 <p><a href="/follow/{{ user.id }}">Follow This User</a></p>
+<p><a href="/unfollow/{{ user.id }}">Unfollow This User</a></p>
 {% endif %}
 
 <h4>{{ user.display_name }}</h4>

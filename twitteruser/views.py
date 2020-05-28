@@ -44,4 +44,5 @@ def FollowView(request, id):
 
 @login_required
 def UnfollowView(request, id):
+    request.user.following.remove(TwitterUser.objects.get(id=id))
     return HttpResponseRedirect(reverse('home'))
