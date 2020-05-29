@@ -11,5 +11,6 @@ def NotificationsView(request):
     notification_ids = user.notification_set.values_list('tweet_id', flat=True)
     tweets = Tweet.objects.filter(
         id__in=notification_ids).order_by('-date')[:10]
-    # delete current notifications here
-    return render(request, html, {'user': user, 'tweets': tweets})
+    result = render(request, html, {'user': user, 'tweets': tweets})
+    user.notification_set.all().delete()
+    return result
