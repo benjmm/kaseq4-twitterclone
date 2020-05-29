@@ -27,11 +27,13 @@ def AddTweetView(request):
                 body=data['body'],
             )
             # add @notification detection to define recipient (as list for multiple?)
-            recipient = TwitterUser.objects.get(id=1)
-            Notification.objects.create(
-                recipient=recipient,
-                tweet=tweet,
-            )
+            recipients = [TwitterUser.objects.get(
+                id=1), TwitterUser.objects.get(id=2)]
+            for recipient in recipients:
+                Notification.objects.create(
+                    recipient=recipient,
+                    tweet=tweet,
+                )
             return HttpResponseRedirect(reverse('tweet', args=(tweet.id,)))
 
     form = AddTweetForm()
