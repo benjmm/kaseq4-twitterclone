@@ -1,7 +1,6 @@
 To Do:
--@Mentions to trigger Notifications
 -Delete notifications after being viewed
--Check for login in models, forms, & urls files
+-Check for logic in models, forms, & urls files
 -Check for only three custom models: TwitterUser Tweet, and Notification
 -Remove "-Return to Home-" link when already at home page
 -Rename '/' to 'index'?
@@ -18,6 +17,10 @@ Done:
 -Tweet/Follow Counts
 -Home page only shows tweets of users you are following
 -Notifications
+-@Mentions to trigger Notifications
 
+
+For help with automatic login after registration:
+https://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
 For help with making a values list in a query:
 https://stackoverflow.com/questions/4812035/django-objects-filter-values-list-vs-python-list-comprehension-for-in-quer
