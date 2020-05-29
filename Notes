@@ -1,5 +1,4 @@
 To Do:
--Delete notifications after being viewed
 -Check for logic in models, forms, & urls files
 -Check for only three custom models: TwitterUser Tweet, and Notification
 -Remove "-Return to Home-" link when already at home page
@@ -18,7 +17,7 @@ Done:
 -Home page only shows tweets of users you are following
 -Notifications
 -@Mentions to trigger Notifications
-
+-Delete notifications after being viewed
 
 For help with automatic login after registration:
 https://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
