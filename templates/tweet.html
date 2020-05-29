@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% include 'nav.html' %}
 
 <h2>Tweet Details</h2>
-{% include 'nav.html' %} {% include 'tweet_blob.html' %}
+{% include 'tweet_blob.html' %}
 
 <p><a href="/tweet/{{ tweet.id }}">(Permalink)</a></p>
 
