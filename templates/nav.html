@@ -1,7 +1,9 @@
 {% if request.user.is_authenticated %}
 <p>
   You are currently logged in as
-  <a href="/user/{{request.user.id}}/">{{ request.user.display_name }}</a>.
+  <a href="/user/{{request.user.id}}/"
+    >{{ request.user.display_name }} (@{{ request.user.username }})</a
+  >.
 </p>
 <p>
   <a href="/addtweet">Tweet</a> | <a href="/home">Return to Home</a> |

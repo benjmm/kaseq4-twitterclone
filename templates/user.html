@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 {% include 'nav.html' %}
 
-<h2>User Details: {{ user.display_name }}</h2>
+<h2>User Details: {{ user.display_name }} (@{{ user.username }})</h2>
 
 {% if request.user.is_authenticated %}
 <p><a href="/follow/{{ user.id }}">Follow This User</a> | <a href="/unfollow/{{ user.id }}">Unfollow This User</a></p>
