@@ -1,10 +1,9 @@
 To Do:
--make "Return to Home" link conditional
+-make follow & unfollow links conditional
 -Rename '/' to 'index'?
 -Rename 'home' to '/'?
 -Add option to self-edit user profile
 -Add option to delete own tweets
--make follow & unfollow links conditional
 
 Done:
 -Rename CustomUser to TwitterUser
@@ -19,6 +18,7 @@ Done:
 -Check for logic in models, forms, & urls files
 -Check for only three custom models: TwitterUser Tweet, and Notification
 -update UI to show actual @usernames
+-make "Return to Home" link conditional
 
 For help with automatic login after registration:
 https://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
