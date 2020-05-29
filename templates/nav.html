@@ -5,6 +5,10 @@
 </p>
 <p>
   <a href="/addtweet">Tweet</a> | <a href="/home">Return to Home</a> |
+  <a href="/notifications/"
+    >Notifications ({{ request.user.notification_set.count }})</a
+  >
+  |
   <a href="/logout">Log Out</a>
 </p>
 

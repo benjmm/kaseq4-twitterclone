@@ -2,9 +2,12 @@ from django.shortcuts import render, reverse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .models import Tweet
 from .forms import AddTweetForm
-
+from notification.models import Notification
+from twitteruser.models import TwitterUser
 
 # @login_required
+
+
 def TweetView(request, id):
     html = "tweet.html"
     tweet = Tweet.objects.get(id=id)
@@ -22,6 +25,12 @@ def AddTweetView(request):
             tweet = Tweet.objects.create(
                 author=request.user,
                 body=data['body'],
+            )
+            # add @notification detection to define recipient (as list for multiple?)
+            recipient = TwitterUser.objects.get(id=1)
+            Notification.objects.create(
+                recipient=recipient,
+                tweet=tweet,
             )
             return HttpResponseRedirect(reverse('tweet', args=(tweet.id,)))
 

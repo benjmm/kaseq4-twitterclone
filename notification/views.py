@@ -8,12 +8,8 @@ from tweet.models import Tweet
 def NotificationsView(request):
     html = 'notifications.html'
     user = request.user
-    notification_ids = user.notification_set.values_list('id', flat=True)
+    notification_ids = user.notification_set.values_list('tweet_id', flat=True)
     tweets = Tweet.objects.filter(
-        author__in=notification_ids).order_by('-date')[:10]
+        id__in=notification_ids).order_by('-date')[:10]
+    # delete current notifications here
     return render(request, html, {'user': user, 'tweets': tweets})
-
-
-@ login_required
-def NotifyView(request):
-    pass
