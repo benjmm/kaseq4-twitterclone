@@ -26,9 +26,12 @@ def AddTweetView(request):
                 author=request.user,
                 body=data['body'],
             )
-            # add @notification detection to define recipient (as list for multiple?)
-            recipients = [TwitterUser.objects.get(
-                id=1), TwitterUser.objects.get(id=2)]
+            # add @notification detection to define mentions
+            mentions = ['ben', 'jen', 'jen']
+            # make a set of valid @mentions:
+            recipients = {TwitterUser.objects.get(username=mention)
+                          for mention in mentions if (mention,)
+                          in TwitterUser.objects.values_list('username')}
             for recipient in recipients:
                 Notification.objects.create(
                     recipient=recipient,
