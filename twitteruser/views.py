@@ -39,10 +39,10 @@ def RegisterView(request):
 @login_required
 def FollowView(request, id):
     request.user.following.add(TwitterUser.objects.get(id=id))
-    return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect(reverse('user', args=(id,)))
 
 
 @login_required
 def UnfollowView(request, id):
     request.user.following.remove(TwitterUser.objects.get(id=id))
-    return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect(reverse('user', args=(id,)))
