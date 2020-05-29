@@ -4,6 +4,7 @@ from .models import Tweet
 from .forms import AddTweetForm
 from notification.models import Notification
 from twitteruser.models import TwitterUser
+import re
 
 # @login_required
 
@@ -26,11 +27,9 @@ def AddTweetView(request):
                 author=request.user,
                 body=data['body'],
             )
-            # add @notification detection to define mentions
-            mentions = ['ben', 'jen', 'jen']
-            # make a set of valid @mentions:
-            recipients = {TwitterUser.objects.get(username=mention)
-                          for mention in mentions if (mention,)
+            mentions = re.findall('@\w+', data['body'])
+            recipients = {TwitterUser.objects.get(username=mention[1:])
+                          for mention in mentions if (mention[1:],)
                           in TwitterUser.objects.values_list('username')}
             for recipient in recipients:
                 Notification.objects.create(
