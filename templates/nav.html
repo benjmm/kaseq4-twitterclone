@@ -6,7 +6,8 @@
   >
 </p>
 <p>
-  <a href="/addtweet">Tweet</a> | <a href="/home">Return to Home</a> |
+  {% if request.path != "/home/" %} <a href="/home">Home</a> | {% endif %}
+  <a href="/addtweet">Tweet</a> |
   <a href="/notifications/"
     >Notifications ({{ request.user.notification_set.count }})</a
   >
