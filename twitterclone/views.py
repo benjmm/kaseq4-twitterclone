@@ -14,6 +14,8 @@ def HomeView(request):
     html = 'home.html'
     user = request.user
     following_ids = user.following.values_list('id', flat=True)
-    tweets = Tweet.objects.filter(
-        author__in=following_ids).order_by('-date')[:10]
-    return render(request, html, {'user': user, 'tweets': tweets})
+    author_tweets = Tweet.objects.filter(author=user)
+    following_tweets = Tweet.objects.filter(author__in=following_ids)
+    tweets = author_tweets | following_tweets
+    recent_tweets = tweets.distinct().order_by('-date')[:10]
+    return render(request, html, {'user': user, 'tweets': recent_tweets})
