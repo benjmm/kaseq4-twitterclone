@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+{% include 'nav.html' %}
+
+<h2>User Details: {{ user.display_name }} (@{{ user.username }})</h2>
+
+{% if request.user.is_authenticated %}
+<p>
+  {% if user in request.user.following.all %}
+  <a href="/unfollow/{{ user.id }}">Unfollow This User</a>
+  {% else %}
+  <a href="/follow/{{ user.id }}">Follow This User</a>
+  {% endif %}
+</p>
+
+{% endif %}
+
+<p>Following: {{ user.following.count }} | 
+Tweets: {{ user.tweet_set.count }}</p>
+
+
+<p>
+  {% if tweets %}
+<ul>
+  {%for tweet in tweets%}
+
+  <li>{% include 'tweet_blob.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No Tweets.</h6>
+{% endif %}
+</p>
+
+{% endblock %}

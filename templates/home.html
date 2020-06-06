@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+{% include 'nav.html' %}
+
+<h2>Home</h2>
+
+<p>
+  <h4>My peeps' tweets:</h4>
+{% if tweets %}
+<ul>
+  {%for tweet in tweets%}
+
+  <li>{% include 'tweet_blob.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No Tweets.</h6>
+{% endif %}
+</p>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+{% include 'nav.html' %}
+
+<h2>Notifications</h2>
+
+<p>
+{% if tweets %}
+<ul>
+  {%for tweet in tweets%}
+
+  <li>{% include 'tweet_blob.html' %}</li>
+
+  {% endfor %}
+</ul>
+{% else %}
+
+<h6>No notifications.</h6>
+{% endif %}
+</p>
+
+{% endblock %}

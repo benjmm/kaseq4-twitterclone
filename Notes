@@ -1,0 +1,29 @@
+To Do:
+-Rename '/' to 'index'?
+-Rename 'home' to '/'?
+-Add option to self-edit user profile
+-Add option to delete own tweets
+-Add pagination to lists of tweets
+-Add count of followers to user details page
+
+Done:
+-Rename CustomUser to TwitterUser
+-Registration
+-Add a Tweet
+-Follow/Unfollow
+-Tweet/Follow Counts
+-Home page only shows tweets of users you are following
+-Notifications
+-@Mentions to trigger Notifications
+-Delete notifications after being viewed
+-Check for logic in models, forms, & urls files
+-Check for only three custom models: TwitterUser Tweet, and Notification
+-update UI to show actual @usernames
+-make "Return to Home" link conditional
+-make follow & unfollow links conditional
+-Change redirects after follow/unfollow
+
+For help with automatic login after registration:
+https://stackoverflow.com/questions/3222549/how-to-automatically-login-a-user-after-registration-in-django
+For help with making a values list in a query:
+https://stackoverflow.com/questions/4812035/django-objects-filter-values-list-vs-python-list-comprehension-for-in-quer
