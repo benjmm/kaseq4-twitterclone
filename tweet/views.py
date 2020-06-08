@@ -1,5 +1,4 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
 from .models import Tweet
 from .forms import AddTweetForm
 from notification.models import Notification
