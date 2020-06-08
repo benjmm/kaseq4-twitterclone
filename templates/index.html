@@ -6,18 +6,14 @@
 
 <p>
     <h4>Latest Tweets:</h4>
-  {% if tweets %}
   <ul>
-    {%for tweet in tweets%}
+    {%for tweet in object_list %}
   
     <li>{% include 'tweet_blob.html' %}</li>
-  
+    {% empty %}
+    <h6>No Tweets.</h6>
     {% endfor %}
   </ul>
-  {% else %}
-  
-  <h6>No Tweets.</h6>
-  {% endif %}
   </p>
 
   {% endblock %}
