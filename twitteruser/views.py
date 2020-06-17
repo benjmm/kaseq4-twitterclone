@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required
 from .models import TwitterUser
 from tweet.models import Tweet
 from .forms import TwitterUserCreationForm
+from django.views.generic import View
 
 
-# @ login_required
 def UserView(request, id):
     html = "user.html"
     user = TwitterUser.objects.get(id=id)
@@ -17,23 +17,23 @@ def UserView(request, id):
 # how-to-automatically-login-a-user-after-registration-in-django
 
 
-def RegisterView(request):
+class RegisterView(View):
     html = "form.html"
-    if request.method == 'POST':
+
+    def get(self, request):
+        form = TwitterUserCreationForm()
+        return render(request, self.html, {'form': form})
+
+    def post(self, request):
         form = TwitterUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            # messages.info(
-            #     request, "Thanks for registering. You are now logged in.")
             new_user = authenticate(username=form.cleaned_data['username'],
                                     password=form.cleaned_data['password1'],
                                     )
             login(request, new_user)
             return HttpResponseRedirect(reverse('home'))
-
-    form = TwitterUserCreationForm()
-
-    return render(request, html, {'form': form})
+        return render(request, self.html, {'form': form})
 
 
 @login_required

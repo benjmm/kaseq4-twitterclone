@@ -1,12 +1,11 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
 from .models import Tweet
 from .forms import AddTweetForm
 from notification.models import Notification
 from twitteruser.models import TwitterUser
 import re
-
-# @login_required
+from django.views.generic import View
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def TweetView(request, id):
@@ -15,11 +14,15 @@ def TweetView(request, id):
     return render(request, html, {'tweet': tweet, })
 
 
-@login_required
-def AddTweetView(request):
-    html = "form.html"
+class AddTweetView(LoginRequiredMixin, View):
 
-    if request.method == 'POST':
+    def get(self, request):
+        html = "form.html"
+        form = AddTweetForm()
+        return render(request, html, {"form": form})
+
+    def post(self, request):
+        html = "form.html"
         form = AddTweetForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
@@ -37,7 +40,4 @@ def AddTweetView(request):
                     tweet=tweet,
                 )
             return HttpResponseRedirect(reverse('tweet', args=(tweet.id,)))
-
-    form = AddTweetForm()
-
-    return render(request, html, {"form": form})
+        return render(request, html, {"form": form})

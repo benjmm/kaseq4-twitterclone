@@ -23,7 +23,7 @@ from tweet.urls import urlpatterns as tweet_urls
 from twitteruser.urls import urlpatterns as twitteruser_urls
 
 urlpatterns = [
-    path('', views.IndexView, name='index'),
+    path('', views.IndexView.as_view(), name='index'),
     path('home/', views.HomeView, name='home'),
     path('admin/', admin.site.urls),
 ]

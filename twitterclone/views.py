@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from tweet.models import Tweet
+from django.views.generic import ListView
 
 
-def IndexView(request):
-    html = 'index.html'
-    tweets = Tweet.objects.all().order_by('-date')[:10]
-    return render(request, html, {'tweets': tweets})
+class IndexView(ListView):
+    template_name = 'index.html'
+    model = Tweet
+    queryset = Tweet.objects.all().order_by('-date')[:20]
 
 
 @ login_required
